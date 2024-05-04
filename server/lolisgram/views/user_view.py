@@ -1,14 +1,14 @@
 from rest_framework import viewsets, permissions
 from rest_framework.response import Response
 from lolisgram.serializer.user_serializer import UserSerializer
-from lolisgram.models.user_model import User
+from lolisgram.models.user_model import CustomUser
 from rest_framework import status
 
 class UserViewSet(viewsets.ModelViewSet):
     """
     User viewset
     """
-    queryset = User.objects.all()
+    queryset = CustomUser.objects.all()
     permission_classes = [
         permissions.AllowAny
     ]

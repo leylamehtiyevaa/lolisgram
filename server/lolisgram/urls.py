@@ -9,5 +9,8 @@ routers.register(r'posts', post_view.PostViewSet)
 routers.register(r'comments', comment_view.CommentViewSet)
 
 urlpatterns = [
-    path('', main_view.index, name='index'),
+    path('', include(routers.urls)),
+    path('loli', main_view.index, name='index'),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
     ]

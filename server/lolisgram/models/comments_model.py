@@ -1,14 +1,14 @@
 from django.db import models
 
-from lolisgram.models.user_model import User
+from lolisgram.models.user_model import CustomUser
 from lolisgram.models.posts_model import Post
 
 class Comment(models.Model):
     """
     Comment model
     """
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
-    # post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
     comment = models.TextField()
     date_commented = models.DateTimeField(auto_now_add=True)
 
