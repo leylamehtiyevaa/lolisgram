@@ -1,3 +1,4 @@
 myenv/
 templates/
 static/
+__pycache__/
